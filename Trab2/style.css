@@ -1,0 +1,190 @@
+
+body {
+    font-family: sans-serif;
+    background-color: #fce4ec; /* Um rosa suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.album-info {
+    grid-column: 1 / 3;
+    text-align: center;
+
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1)), url("https://i.ytimg.com/vi/50P18m1K_U4/maxresdefault.jpg");
+    background-size: cover;
+    background-position: center center;
+
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.album-cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.album-info h2 {
+    color: #e91e63; 
+    font-size: 45px;
+    margin-bottom: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.album-info .artista {
+    font-weight: bold;
+    color: #9c27b0; 
+    margin-bottom: 2px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.album-info .release-date, .album-info .genre {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.artista-foto {
+    width: 130px;
+    height: 120px;
+    border-radius: 60%;
+    overflow: hidden;
+    grid-column: 1/3;
+    justify-self: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.artista-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list-music {
+    grid-column: 1 / 3;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.list-music h3 {
+    color: #e91e63;
+    border-bottom: 2px solid #e91e63;
+    padding-bottom: 2px;
+    margin-bottom: 20px;
+    
+    font-size: 40px;
+}
+
+.list-music table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-music th, .list-music td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    color: #9c27b0;
+    font-weight: 400;
+}
+
+.list-music th {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.list-music tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+
+.list-music td:nth-child(4) {
+    text-align: center;
+}
+
+.list-music td:last-child {
+    text-align: center;
+}
+
+.list-music i.fa-heart, .list-music i.fa-play-circle {
+    transition: color 0.3s ease-in-out;
+}
+
+.coracao-fav{
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.coracao-fav filled{
+    color: #e91e63;
+}
+
+.list-music i.fa-heart:hover {
+    color: #ff1493;
+}
+
+.list-music i.fa-play-circle {
+    font-size: 1.4em;
+    color: #e91e63;
+}
+
+.list-music i.fa-play-circle:hover {
+    color: #f2ff3d;
+}
+
+.artista-bio {
+    grid-column: 1 / 3;
+
+}
+
+.artista-bio h3 {
+    background-color: ;
+    color: #e91e63;
+    border-bottom: 2px solid #e91e63;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.artista-bio p {
+    line-height: 1.6;
+    color: #333;
+}

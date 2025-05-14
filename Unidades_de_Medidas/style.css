@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: antiquewhite;
+}
+
+.tela {
+    padding: 20px;
+    border: 5px solid rgb(209, 64, 136);
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+
+    border: 5px solid blue;
+    width: 80%;
+    height: 75%;
+    padding: 20px;
+}
+
+.card img {
+
+    width: 4cm;
+    max-width: 400px;
+}
+
+/* Textos */
+
+.conteudo {
+    padding-left: 20px;
+}
+
+.normal {
+    font-size: 1em;
+}
+
+.duplo {
+    font-size: 2em;
+}
+
+.triplo {
+    font-size: 3em;
+}
+
+.botao {
+    background-color: cadetblue;
+    color: black;
+    font-size: 30px;
+    border-radius: 0.3em;
+    padding: 0.3em 0.6em;
+    margin-left: 0.2em;
+}
