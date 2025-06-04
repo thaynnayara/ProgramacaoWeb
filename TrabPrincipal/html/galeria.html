@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos Vorazes - Personagens</title>
+    <link rel="stylesheet" href="sty.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/15/f3/83/15f3832e690bfdd0c1bd4b286d240a3a.jpg" alt="Logo Tordo">
+
+                <h1>Jogos Vorazes</h1>
+
+            </div>
+
+            <ul class="menu">
+                <li><a href="ind.html">Início</a></li>
+                <li><a href="resumo.html">Resumo da Obra</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+
+                <li class="dropdown">
+                    <a href="filmes.html" class="dropbtn">Os Filmes</a>
+                    <div class="dropdown-content">
+                        <a href="jogos-vorazes.html">Jogos Vorazes</a>
+                        <a href="em-chamas.html">Em Chamas</a>
+                        <a href="a-esperanca-parte1.html">A Esperança - Parte 1</a>
+                        <a href="a-esperanca-parte2.html">A Esperança - Parte 2</a>
+                        <a href="cantiga-passaros-serpentes.html">A Cantiga dos Pássaros e das Serpentes</a>
+                    </div>
+                </li>
+
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
+<main class="container">
+
+    <section class="gallery-section">
+
+        <h2>Momentos Marcantes da Saga</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/f8/71/db/f871db2004aaa750164016041ec9dd75.jpg" alt="Katniss com arco e flecha">
+                <p class="gallery-item-caption">Katniss Everdeen com seu icônico arco e flecha.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/14/ff/c7/14ffc7bab525fa7757a7de9167e9a7b8.jpg" alt="Arena dos Jogos Vorazes">
+                <p class="gallery-item-caption">A brutalidade da arena dos Jogos.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/c1/d0/53/c1d0531db2a12a1ad1ee8f8236f5af34.jpg" alt="Tributos na Capital">
+                <p class="gallery-item-caption">A ostentação da Capital e os tributos.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/11/a2/eb/11a2ebcbb96af3959df33099331b5594.jpg" alt="Rebelião nos distritos">
+                <p class="gallery-item-caption">A chama da rebelião se espalhando pelos distritos.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/c9/89/a6/c989a69faf94246604a4a6e42e8f4266.jpg" alt="Broche do Tordo">
+                <p class="gallery-item-caption">O broche do Tordo, símbolo da esperança.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/76/70/22/767022765582e82db4afa04701e7499f.jpg" alt="Peeta e Katniss">
+                <p class="gallery-item-caption">A complexa relação entre Katniss e Peeta.</p>
+            </div>
+            </div>
+
+    </section>
+    
+    <div id="imageModal" class="modal">
+            <span class="close-button">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption" class="modal-caption"></div>
+    </div>
+
+</main>
+
+<script>
+    // Seleciona todos os itens da galeria
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    // Seleciona os elementos do modal
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('caption');
+    const closeButton = document.querySelector('.close-button');
+
+    // Adiciona um evento de clique para cada item da galeria
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.querySelector('img').src;
+            const imgAlt = item.querySelector('img').alt;
+            const captionText = item.querySelector('.gallery-item-caption') ? item.querySelector('.gallery-item-caption').textContent : imgAlt;
+
+            modalImage.src = imgSrc;
+            modalCaption.textContent = captionText;
+            imageModal.style.display = 'flex'; 
+        });
+    });
+
+    // Adiciona evento para fechar o modal ao clicar no botão "X"
+    closeButton.addEventListener('click', () => {
+        imageModal.style.display = 'none';
+    });
+
+    // Adiciona evento para fechar o modal ao clicar fora da imagem
+    imageModal.addEventListener('click', (event) => {
+        if (event.target === imageModal) {
+            imageModal.style.display = 'none';
+        }
+    });
+
+    // Opcional: Fechar o modal ao pressionar a tecla ESC
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && imageModal.style.display === 'flex') {
+            imageModal.style.display = 'none';
+        }
+    });
+
+</script>
