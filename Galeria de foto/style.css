@@ -1,0 +1,118 @@
+/* style.css */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start;
+    min-height: 100vh; 
+}
+
+.galeria {
+    max-width: 1200px; /* Largura máxima da galeria */
+    width: 100%; /* Garante que ocupe a largura disponível até o max-width */
+    margin: 20px auto; /* Margem superior/inferior de 20px, centralizado horizontalmente */
+    background-color: #fff; /* Fundo branco para a galeria */
+    padding: 20px; /* Espaçamento interno da galeria */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex; /* Usa flexbox para organizar a imagem grande e as miniaturas */
+    flex-direction: column; /* Organiza os itens em coluna (imagem grande em cima, miniaturas embaixo) */
+    gap: 20px; /* Espaço entre a imagem grande e o contêiner de miniaturas */
+}
+
+/* Estilos para a imagem grande */
+.img_big {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    object-fit: contain; 
+    max-height: 500px; 
+}
+
+/* Contêiner das miniaturas */
+.miniaturas {
+    display: grid; 
+    gap: 15px; /* Espaço entre as miniaturas */
+    
+    /* Por padrão, tenta 6 colunas, com min de 120px e max de 1fr (fração do espaço disponível) */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center; /* Centraliza as miniaturas dentro do grid se não preencherem toda a largura */
+}
+
+/* Estilos para as miniaturas individuais */
+.img_mini {
+    width: 100%; /* Ocupa 100% da largura da sua célula no grid */
+    height: 100px; /* Altura fixa para as miniaturas (ajuste conforme necessário) */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço, mantendo a proporção */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 4px; /* Cantos arredondados */
+    cursor: pointer; /* Indica que o item é clicável */
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição suave para efeitos de hover */
+}
+
+.img_mini:hover {
+    transform: translateY(-3px); /* Efeito de "levantar" ao passar o mouse */
+    border-color: #007bff; /* Borda azul ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+}
+
+/* Estilo para a miniatura atualmente selecionada (exemplo de como aplicar via JavaScript) */
+.img_mini.selected {
+    border-color: #0056b3; /* Cor da borda mais escura para a imagem selecionada */
+    box-shadow: 0 0 0 2px #0056b3; /* Anel de foco para a imagem selecionada */
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores que 1000px (ex: 5 colunas) */
+@media (max-width: 1000px) {
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+}
+
+/* Telas menores que 800px (ex: 4 colunas) */
+@media (max-width: 800px) {
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+/* Telas menores que 600px (ex: 3 colunas) */
+@media (max-width: 600px) {
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+    .galeria {
+        padding: 15px; /* Reduz o padding em telas menores */
+    }
+}
+
+/* Telas muito pequenas, como celulares na vertical (ex: 2 colunas) */
+@media (max-width: 450px) {
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px; /* Reduz o gap */
+    }
+    .img_big {
+        max-height: 300px; /* Reduz a altura máxima da imagem grande */
+    }
+    body {
+        padding: 10px;
+    }
+}
