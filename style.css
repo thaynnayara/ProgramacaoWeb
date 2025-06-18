@@ -1,0 +1,427 @@
+/* --- GERAL E RESET --- */
+:root {
+    --cor-primaria: #556697;
+    --cor-primaria-hover: #3226dc;
+    --cor-fundo-escuro: #0a0a0a;
+    --cor-fundo-medio: #1f2937;
+    --cor-fundo-claro: #374151;
+    --cor-texto-principal: #f3f4f6;
+    --cor-texto-secundario: #d1d5db;
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-principal);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- CABEÇALHO --- */
+.cabecalho {
+    background-color: rgba(17, 24, 39, 0.8);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    height: 2.5rem;
+    border-radius: 0.375rem;
+}
+
+.navegacao-principal ul {
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.navegacao-principal a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-primaria);
+}
+
+.menu-hamburguer {
+    display: none; 
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 100;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--cor-texto-principal);
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+/* --- SEÇÃO CAPA --- */
+.secao-capa {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+
+.sombra-capa {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.conteudo-capa {
+    position: relative;
+    z-index: 10;
+    max-width: 56rem;
+}
+
+.conteudo-capa h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 1.5rem;
+}
+
+.conteudo-capa .subtitulo {
+    display: block;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+.botao-acao {
+    display: inline-block;
+	font-size: 1.3rem;
+	text-decoration: none;
+	padding: 0.35em 1.5em;
+	color: #fdfdfd;
+	border: 2px solid #777e9e;
+	text-transform: uppercase;
+}
+
+.botao-acao:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SEÇÃO SOBRE --- */
+.secao-sobre {
+    background-color: var(--cor-fundo-medio);
+    padding: 4rem 1rem;
+}
+
+.caixa-sobre {
+    background-color: var(--cor-fundo-claro);
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 56rem;
+    margin: 0 auto;
+    border: 1px solid #4b5563;
+}
+
+.caixa-sobre h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--cor-primaria);
+}
+
+.caixa-sobre p {
+    position: relative;
+	background-color: #232323;
+	outline: 2px solid #6d65b9;
+	padding: 2.5em;
+	color: #fff;
+	font-size: 1.1em;
+	line-height: 1.3;
+}
+
+/* --- SEÇÃO EQUIPE --- */
+.secao-equipe {
+    background-color: var(--cor-fundo-escuro);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: var(--cor-primaria);
+}
+
+.grade-equipe {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.membro-equipe {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #1f2937;
+}
+
+.membro-equipe:hover {
+    transform: scale(1.05);
+}
+
+.membro-equipe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.membro-equipe:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.75);
+}
+
+.info-membro {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.membro-equipe:hover .info-membro {
+    opacity: 1;
+}
+
+.botao-membro {
+    display: inline-block;
+	font-size: 1.3rem;
+	text-decoration: none;
+	padding: 0.35em 1.5em;
+	color: #fdfdfd;
+	border: 2px solid #6574b9;
+	text-transform: uppercase;
+}
+
+.botao-membro:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: scale(1.1);
+}
+
+/* --- SEÇÃO PÔSTERES --- */
+.secao-posteres {
+    background-color: var(--cor-fundo-claro);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.grade-posteres {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.item-poster {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    border: 1px solid #4b5563;
+}
+
+.item-poster:hover {
+    transform: scale(1.05);
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: var(--cor-fundo-medio);
+    padding: 4rem 1rem;
+    color: var(--cor-texto-secundario);
+    border-top: 1px solid #374151;
+}
+
+.conteudo-rodape {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.sobre-rodape {
+    line-height: 1.6;
+}
+
+.links-rodape strong {
+    color: var(--cor-primaria);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.links-rodape ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.links-rodape a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 767px) {
+    .navegacao-principal {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #111827;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+    .navegacao-principal.visivel {
+        display: flex; 
+    }
+    .navegacao-principal ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    .navegacao-principal li {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    .menu-hamburguer {
+        display: flex; 
+    }
+    .conteudo-capa h1 {
+        font-size: 2.5rem;
+    }
+    .conteudo-capa .subtitulo {
+        font-size: 1.75rem;
+    }
+    .titulo-secao {
+        font-size: 2.25rem;
+    }
+    .conteudo-rodape {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .cabecalho {
+        padding: 1rem 4rem;
+    }
+    .grade-equipe {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grade-posteres {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .conteudo-rodape {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: left;
+    }
+    .sobre-rodape {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grade-equipe {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grade-posteres {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .conteudo-rodape {
+        grid-template-columns: repeat(5, 1fr);
+    }
+     .sobre-rodape {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grade-posteres {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .grade-equipe{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .caixa-sobre{
+        max-width: 95rem;
+    }
+
+    .conteudo-capa{
+        font-size: 1rem;
+        font-display: 2rem;
+        font-size-adjust: unset;
+    }
+}
